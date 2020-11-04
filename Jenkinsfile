@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+  agent none
   stages {
     stage('build') {
       agent {
@@ -53,6 +53,7 @@ pipeline {
     }
 
     stage('DeploytoDev') {
+      agent any
       steps {
         sh '''cd bootcamp/jenkins
 docker-compose exec -u root  jenkins bash
